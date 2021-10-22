@@ -49,7 +49,7 @@ Source database and target database, in this configuration a VM in Azure and AWS
 
 Within DMS you can have multiple combinations of resources depending on your use case. For example (not an exhaustive list of possible combinations):
 
-#### Simple
+### Simple
 
 - One source endpoint
 - One target/destination endpoint
@@ -66,26 +66,20 @@ Within DMS you can have multiple combinations of resources depending on your use
 
 No output.
 
-#### Postgres Configuration for AWS DMS Replication
+## Postgres Configuration for AWS DMS Replication
 
 This section highlights the configuration changes that needs to be done to pg_hba.conf and postgresql.conf files
 
 - pg_hba.conf changes
-  - "# Replication Instance"
-            host all all 12.3.4.56/00 md5
-            # Allow replication connections from localhost, by a user with the
-            # replication privilege.
-            host replication dms 12.3.4.56/00 md5
+  - "# Replication Instance" add the following lines to the end of pg_hba.conf
+    - host all all 12.3.4.56/00 md5
+    - "# Allow replication connections from localhost, by a user with the replication privilege."
+    - host replication dms 12.3.4.56/00 md5
 
 - postgresql.conf changes
   - Set wal_level = logical
   - Set max_replication_slots to a value greater than 1
   - Set max_wal_senders to a value greater than 1
   - Set wal_sender_timeout =0
-for more details please click the link below
+- for more details please click the link below
 <https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html>
-
-- One replication task
-- Two event subscriptions
-  - Replication instance event subscription
-  - Replication task event subscription
