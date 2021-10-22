@@ -85,3 +85,9 @@ This section highlights the configuration changes that needs to be done to pg_hb
 ## for more details please click the link below
 
 <https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html>
+
+## Steps for execution
+
+- Terraform init
+- Terraform plan -out mdsdep.tfplan
+- Terraform apply mdsdep.tfplan
