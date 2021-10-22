@@ -88,6 +88,7 @@ This section highlights the configuration changes that needs to be done to pg_hb
 
 ## Steps for execution
 
+- Clone the repo to your local dev tool (VS Code)
 - Terraform init
 - Terraform plan -out mdsdep.tfplan
 - Terraform apply mdsdep.tfplan
