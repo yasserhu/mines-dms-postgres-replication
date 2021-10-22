@@ -81,5 +81,7 @@ This section highlights the configuration changes that needs to be done to pg_hb
   - Set max_replication_slots to a value greater than 1
   - Set max_wal_senders to a value greater than 1
   - Set wal_sender_timeout =0
-- for more details please click the link below
+
+## for more details please click the link below
+
 <https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html>
